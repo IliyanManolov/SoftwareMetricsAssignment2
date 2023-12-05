@@ -41,13 +41,8 @@ def save_to_csv(data):
     writer = csv.writer(f, delimiter=';')
     writer.writerows(data.items())
 
-def save_to_excel(csvFile, excelFile):
-  read_file = pd.read_csv(f'{csvFile}.csv', delimiter=';')
-  read_file.to_excel(f'{excelFile}.xlsx', index = None, header=True)
-
 result = {}
 init(result)
 # print(result)
 final_result = get_link_averages(result)
 save_to_csv(final_result)
-save_to_excel("performance_times", "performance_spreadsheet")
